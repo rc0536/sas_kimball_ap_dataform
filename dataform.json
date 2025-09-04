@@ -1,0 +1,10 @@
+{
+  "defaultSchema": "ap",
+  "warehouse": "bigquery",
+  "assertionSchema": "ap_assertions",
+  "vars": {
+    "stagingSchema": "staging",
+    "targetSchema": "ap",
+    "surrogateKeyStrategy": "uuid"
+  }
+}

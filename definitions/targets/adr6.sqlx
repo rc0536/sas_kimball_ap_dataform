@@ -1,0 +1,21 @@
+js {
+  const { buildSelect, loadMeta } = require("../includes/lib");
+  const meta = loadMeta("../includes/metadata/adr6.json");
+  const selectList = buildSelect({
+    meta,
+    sourceAlias: "s",
+    surrogateKeyStrategy: dataform.vars().surrogateKeyStrategy
+  });
+}
+
+config {
+  type: "table",
+  schema: dataform.vars().targetSchema,
+  name: "adr6",
+  tags: ["sap", "adr6", "target"]
+}
+
+select
+  {{ selectList }}
+from
+  ${ref(dataform.vars().stagingSchema, "stg_adr6")} as s

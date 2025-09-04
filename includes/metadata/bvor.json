@@ -1,0 +1,77 @@
+{
+  "table": "BVOR",
+  "columns": [
+    {
+      "ordinal": 1,
+      "field": "MANDT",
+      "sasName": "Client",
+      "description": "Client",
+      "element": "MANDT",
+      "checktable": "T000",
+      "datatype": "CLNT",
+      "length": 3,
+      "decimals": 0,
+      "targetType": "VARCHAR(3)"
+    },
+    {
+      "ordinal": 2,
+      "field": "BVORG",
+      "sasName": "NumOfCrossCompCodePostingTran",
+      "description": "Number of Cross-Company Code Posting Transaction",
+      "element": "BVORG",
+      "checktable": "",
+      "datatype": "CHAR",
+      "length": 16,
+      "decimals": 0,
+      "targetType": "VARCHAR(16)"
+    },
+    {
+      "ordinal": 3,
+      "field": "BUKRS",
+      "sasName": "CompCode",
+      "description": "Company Code",
+      "element": "BUKRS",
+      "checktable": "T001",
+      "datatype": "CHAR",
+      "length": 4,
+      "decimals": 0,
+      "targetType": "VARCHAR(4)"
+    },
+    {
+      "ordinal": 4,
+      "field": "GJAHR",
+      "sasName": "FiscYear",
+      "description": "Fiscal Year",
+      "element": "GJAHR",
+      "checktable": "",
+      "datatype": "NUMC",
+      "length": 4,
+      "decimals": 0,
+      "targetType": "INT"
+    },
+    {
+      "ordinal": 5,
+      "field": "BELNR",
+      "sasName": "AcctDoc",
+      "description": "Accounting Document Number",
+      "element": "BELNR_D",
+      "checktable": "",
+      "datatype": "CHAR",
+      "length": 10,
+      "decimals": 0,
+      "targetType": "VARCHAR(10)"
+    },
+    {
+      "ordinal": 6,
+      "field": "XARCH",
+      "sasName": "IndDocAlreadyArchived",
+      "description": "Indicator: Document already archived ?",
+      "element": "XARCH",
+      "checktable": "",
+      "datatype": "CHAR",
+      "length": 1,
+      "decimals": 0,
+      "targetType": "VARCHAR(1)"
+    }
+  ]
+}

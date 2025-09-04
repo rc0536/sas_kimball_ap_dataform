@@ -1,0 +1,20 @@
+config {
+  type: "view",
+  schema: dataform.vars().targetSchema,
+  name: "ap_bsik_enriched",
+  tags: ["ap", "bsik", "enriched"]
+}
+
+-- Example enriched view for BSIK: join with vendor master (LFA1) and company code LFB1
+select
+  k.*, -- all columns from bsik
+  v.Name1 as VendorName,
+  v.CountryKey as VendorCountry,
+  c.PERNR as PersonnelNum
+from
+  ${ref(dataform.vars().targetSchema, "bsik")} k
+left join ${ref(dataform.vars().targetSchema, "lfa1")} v
+  on k.AcctNumOfVendor = v.AcctNumOfVendor
+left join ${ref(dataform.vars().targetSchema, "lfb1")} c
+  on k.AcctNumOfVendor = c.AcctNumOfVendor
+  and k.CompCode = c.CompCode

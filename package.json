@@ -1,0 +1,8 @@
+{
+  "name": "ap-sap-dataform",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Dataform project to convert SAP staging tables into curated AP tables with column rename and type casting.",
+  "dependencies": {},
+  "devDependencies": {}
+}

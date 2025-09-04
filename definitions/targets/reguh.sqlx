@@ -1,0 +1,21 @@
+js {
+  const { buildSelect, loadMeta } = require("../includes/lib");
+  const meta = loadMeta("../includes/metadata/reguh.json");
+  const selectList = buildSelect({
+    meta,
+    sourceAlias: "s",
+    surrogateKeyStrategy: dataform.vars().surrogateKeyStrategy
+  });
+}
+
+config {
+  type: "table",
+  schema: dataform.vars().targetSchema,
+  name: "reguh",
+  tags: ["sap", "reguh", "target"]
+}
+
+select
+  {{ selectList }}
+from
+  ${ref(dataform.vars().stagingSchema, "stg_reguh")} as s

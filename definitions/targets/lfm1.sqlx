@@ -1,0 +1,21 @@
+js {
+  const { buildSelect, loadMeta } = require("../includes/lib");
+  const meta = loadMeta("../includes/metadata/lfm1.json");
+  const selectList = buildSelect({
+    meta,
+    sourceAlias: "s",
+    surrogateKeyStrategy: dataform.vars().surrogateKeyStrategy
+  });
+}
+
+config {
+  type: "table",
+  schema: dataform.vars().targetSchema,
+  name: "lfm1",
+  tags: ["sap", "lfm1", "target"]
+}
+
+select
+  {{ selectList }}
+from
+  ${ref(dataform.vars().stagingSchema, "stg_lfm1")} as s

@@ -1,0 +1,21 @@
+js {
+  const { buildSelect, loadMeta } = require("../includes/lib");
+  const meta = loadMeta("../includes/metadata/bvor.json");
+  const selectList = buildSelect({
+    meta,
+    sourceAlias: "s",
+    surrogateKeyStrategy: dataform.vars().surrogateKeyStrategy
+  });
+}
+
+config {
+  type: "table",
+  schema: dataform.vars().targetSchema,
+  name: "bvor",
+  tags: ["sap", "bvor", "target"]
+}
+
+select
+  {{ selectList }}
+from
+  ${ref(dataform.vars().stagingSchema, "stg_bvor")} as s

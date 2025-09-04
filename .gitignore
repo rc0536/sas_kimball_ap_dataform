@@ -1,0 +1,18 @@
+# Node / Dataform
+node_modules/
+.nyc_output/
+coverage/
+.DS_Store
+
+# Local credentials and junk
+*.local.json
+*.secret.json
+*.key.json
+.env
+.env.*
+*.log
+.idea/
+.vscode/
+
+# Mac/Win
+Thumbs.db

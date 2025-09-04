@@ -1,0 +1,42 @@
+config {
+  type: "declaration",
+  schema: dataform.vars().stagingSchema
+}
+
+-- Declare each raw staging table so that Dataform understands these objects
+
+DECLARE {
+  name: "stg_bsak"
+}
+
+DECLARE {
+  name: "stg_bsik"
+}
+
+DECLARE {
+  name: "stg_lfa1"
+}
+
+DECLARE {
+  name: "stg_lfb1"
+}
+
+DECLARE {
+  name: "stg_lfm1"
+}
+
+DECLARE {
+  name: "stg_payr"
+}
+
+DECLARE {
+  name: "stg_reguh"
+}
+
+DECLARE {
+  name: "stg_bvor"
+}
+
+DECLARE {
+  name: "stg_adr6"
+}
